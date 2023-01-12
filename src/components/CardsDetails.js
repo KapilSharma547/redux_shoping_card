@@ -3,9 +3,10 @@ import Table from "react-bootstrap/Table";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { DLT, ADD, REMOVE } from "../redux/actions/action";
+import Cardsdata from "./CardsData";
 
 const CardsDetails = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(Cardsdata);
   // console.log(data);
 
   const { id } = useParams();

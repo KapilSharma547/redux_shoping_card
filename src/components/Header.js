@@ -9,6 +9,11 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Table from "react-bootstrap/esm/Table";
 import { DLT } from "../redux/actions/action";
+import {
+  AiOutlineCloseCircle,
+  AiOutlineDelete,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 
 const Header = () => {
   const [price, setPrice] = useState(0);
@@ -70,10 +75,10 @@ const Header = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <i
-              class="fa-solid fa-cart-shopping text-light"
+            <AiOutlineShoppingCart
+              className="text-light"
               style={{ fontSize: 25, cursor: "pointer" }}
-            ></i>
+            />
           </Badge>
         </Container>
 
@@ -124,7 +129,8 @@ const Header = () => {
                               }}
                               onClick={() => dlt(e.id)}
                             >
-                              <i className="fas fa-trash smalltrash"></i>
+                              {/* <AiOutlineDelete />{" "} */}
+                              {/* <i className="fas fa-trash smalltrash"></i> */}
                             </p>
                           </td>
 
@@ -137,7 +143,7 @@ const Header = () => {
                             }}
                             onClick={() => dlt(e.id)}
                           >
-                            <i className="fas fa-trash largetrash"></i>
+                            <AiOutlineDelete />
                           </td>
                         </tr>
                       </>
@@ -152,8 +158,8 @@ const Header = () => {
               className="card_details d-flex justify-content-center align-items-center"
               style={{ width: "24rem", padding: 10, position: "relative" }}
             >
-              <i
-                className="fas fa-close smallclose"
+          
+              <AiOutlineCloseCircle
                 onClick={handleClose}
                 style={{
                   position: "absolute",
@@ -162,7 +168,7 @@ const Header = () => {
                   fontSize: 23,
                   cursor: "pointer",
                 }}
-              ></i>
+              />
               <p style={{ fontSize: 22 }}>Your carts is empty</p>
               <img
                 src="./cart.gif"
